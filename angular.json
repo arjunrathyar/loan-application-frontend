@@ -28,7 +28,9 @@
               "src/assets"
             ],
             "styles": [
-              "src/styles.scss"
+              "src/styles.scss",
+              "node_modules/bootstrap/dist/css/bootstrap.min.css",
+              "node_modules/fontawesome-4.7/css/font-awesome.min.css"
             ],
             "scripts": []
           },
@@ -123,6 +125,10 @@
           }
         }
       }
-    }},
-  "defaultProject": "loan-application-frontend"
+    }
+  },
+  "defaultProject": "loan-application-frontend",
+  "cli": {
+    "analytics": false
+  }
 }

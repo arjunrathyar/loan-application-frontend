@@ -1,0 +1,19 @@
+<app-navbar></app-navbar>
+
+<div class="container">
+    <div class="jumbotron text-center">
+        <h1 class="display-4">
+            WELCOME
+        </h1>
+        <p>
+            Please Select Your Option Below!!
+        </p>
+        <hr>
+    </div>
+
+    <div class="row justify-content-center">
+        <a [routerLink]="['/customers/add']" role="button" class="btn btn-primary" style="width: 300px;"><span>Loan Application</span></a>
+        &nbsp;
+        <a [routerLink]="['/customers/list']" role="button" class="btn btn-primary" style="width: 300px;"><span>Applied Status</span></a>
+    </div>
+</div>
