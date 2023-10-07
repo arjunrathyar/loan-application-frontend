@@ -7,10 +7,10 @@
                     [(ngModel)]="searchTerm">
 
             </div>
-            <div class="col-sm-4">
+            <!-- <div class="col-sm-4">
                 <a [routerLink]="['/customers/add']" role="button" class="btn btn-outline-primary custom-margin-button">
                     <span><i class="fa fa-user-plus fa-lg">Add Customer</i></span></a>
-            </div>
+            </div> -->
         </div>
     </div>
 </div>
@@ -40,6 +40,10 @@
                 <th>
                     Status
                 </th>
+
+                <th>
+                    Action
+                </th>
             </tr>
         </thead>
         <tbody>
@@ -52,6 +56,12 @@
                 <td>{{customer.loan.loanName}}</td>
                 <td>{{customer.loanOfficer.loanOfficerName}}</td>
                 <td>{{customer.status.statusName}}</td> 
+                <td>
+                    <button type="button" class="btn btn-sm btn-light" (click)="updateCustomer(customer)">
+                        <i class="fa fa-edit">
+                        </i>
+                    </button>
+                </td>
                 <!-- <td><input type="checkbox" [checked]="customer.active" disabled></td>
                 <td>
                     <button type="button" class="btn btn-sm btn-light" (click)="updateCustomer(customer)">

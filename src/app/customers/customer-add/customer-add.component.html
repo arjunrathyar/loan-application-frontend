@@ -1,1 +1,89 @@
-<p>customer-add works!</p>
+<div class="container">
+    <h3>New Customer Info</h3>
+    <hr>
+    <!--Template Driven Form-->
+    <form name="frmCustomer" #form="ngForm" autocomplete="off" (ngSubmit)="onSubmit(form)">
+
+        <!--Customer Id-->
+        <!-- <div class="form-group">
+            <input type="hidden" readonly name="id" [(ngModel)]="customerService.formCustomerData.id" />
+        </div> -->
+
+        <!--Customer Name-->
+        <div class="form-group"> 
+            <label>Customer Name</label> 
+            <input name="customerName" #customerName="ngModel"
+                [(ngModel)]="customerService.formCustomerData.customerName" class="form-control"
+                placeholder="Enter Customer Name" minlength="3" maxlength="25" required
+                [ngClass]="{'is-invalid':customerName.touched && customerName.invalid}" />
+
+            <!--Validation Error Message-->
+            <div class="validation-error" *ngIf="customerName.touched && customerName.invalid">
+                <div *ngIf="customerName.errors.required">
+                    Customer Name is invalid or required!
+                </div>
+            </div>
+        </div>
+
+        <!--Customer PhoneNumber-->
+        <div class="form-group">
+            <label>Phone Number</label>
+            <input name="phoneNumber" #phoneNumber="ngModel" [(ngModel)]="customerService.formCustomerData.phoneNumber"
+                class="form-control" placeholder="Enter Phone Number" minlength="3" maxlength="25" required
+                [ngClass]="{'is-invalid':phoneNumber.touched && phoneNumber.invalid}" />
+
+            <!--Validation Error Message-->
+            <div class="validation-error" *ngIf="phoneNumber.touched && phoneNumber.invalid">
+                <div *ngIf="phoneNumber.errors.required">
+                    Phone Number is invalid or required!
+                </div>
+            </div>
+        </div>
+
+        <!--Customer Address-->
+        <div class="form-group">
+            <label>Address</label>
+            <input name="address" #address="ngModel" [(ngModel)]="customerService.formCustomerData.address"
+                class="form-control" placeholder="Enter Address" minlength="3" maxlength="25" required
+                [ngClass]="{'is-invalid':address.touched && address.invalid}" />
+
+            <!--Validation Error Message-->
+            <div class="validation-error" *ngIf="address.touched && address.invalid">
+                <div *ngIf="address.errors.required">
+                    Address is invalid or required!
+                </div>
+            </div>
+        </div>
+
+        <!--DropDown-->
+
+        <div class="form-group">
+            <label>Loan</label>
+            <select name="loanId" id="loanId" #loanId="ngModel"
+                [(ngModel)]="customerService.formCustomerData.loanId" class="form-control" required>
+                <option value="0" selected disabled>===========SELECT LOAN===========</option>
+                <option *ngFor="let ln of customerService.loans" value="{{ln.loanId}}">
+                    {{ln.loanName}}</option>
+            </select>
+        </div>
+
+
+        <!--Customer Is Active-->
+        <!-- <div class="form-group">
+            <div class="form-check">
+                <input type="checkbox" name="active" #active="ngModel"
+                    [(ngModel)]="customerService.formCustomerData.active" class="form-check-input custom-checkbox" />
+                &nbsp;
+                <label class="form-check-label">Is in Service?</label>
+            </div>
+
+        </div> -->
+
+        <!--Submit-->
+        <div class="form-group">
+            <button type="submit" class="btn btn-primary form-control" [disabled]="!(form.valid && form.dirty)">
+                SUBMIT
+            </button>
+        </div>
+    </form>
+</div>

@@ -9,7 +9,7 @@ export class Customer {
     phoneNumber: number;
     address: string;
     
-    loanOfficerId: number;
+    loanOfficerId: number; 
     loanOfficer: LoanOfficer;
 
     loanId: number;

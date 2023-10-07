@@ -3,6 +3,7 @@ import { Customer } from '../models/customer';
 import { HttpClient } from '@angular/common/http';
 import { environment } from 'src/environments/environment';
 import { Observable } from 'rxjs';
+import { Loan } from '../models/loan';
 
 @Injectable({
   providedIn: 'root'
@@ -11,15 +12,17 @@ export class CustomerService {
 
   //declare variables -- global variables
 
-  formCustomerData: Customer = new Customer(); 
+  formCustomerData: Customer = new Customer();
 
   // List of Customers
 
   customers: Customer[];
 
-  //List of 
+  //List of Loans
 
-  
+  loans: Loan[];
+
+
 
 
   //dependency injection  -- constructor
@@ -56,25 +59,37 @@ export class CustomerService {
   }
 
   //5 Delete
-  deleteCustomer(id:number): Observable<any> {
-    //permanent delete url (api)
-    //return this.httpClient.delete(environment.apiUrl + "/api/customers/delete/"+ id);
-    //isActive delete url (api)
-    return this.httpClient.delete(environment.apiUrl + "/api/customers/"+ id);
+  deleteCustomer(id: number): Observable<any> {
+    return this.httpClient.delete(environment.apiUrl + "/api/customers/" + id);
   }
 
-  // //get departments
-  // getAllDepartments(): void {
-  //   this.httpClient.get(environment.apiUrl + "/api/departments")
-  //     .toPromise()
-  //     .then(response => {
-  //       console.log(response);
-  //       this.departments = response as Department[];   //storing in array
-  //     },
-  //       error => {
-  //         console.log('Error');
-  //       }
-  //     );
-  // }
+  //6 Get all Requested Customers - through Observable
+  getAllRequestedCustomersList(): void {
+    this.httpClient.get(environment.apiUrl + "/api/requestedcustomers")
+      .toPromise()
+      .then(response => {
+        console.log(response);
+        this.customers = response as Customer[];   //storing in array
+      },
+        error => {
+          console.log('Error');
+        }
+      );
+  }
+
+
+
+  getAllLoans(): void {
+    this.httpClient.get(environment.apiUrl + "/api/loans")
+      .toPromise()
+      .then(response => {
+        console.log(response);
+        this.loans = response as Loan[];   //storing in array
+      },
+        error => {
+          console.log('Error');
+        }
+      );
+  }
 
 }
