@@ -18,5 +18,7 @@ export class Customer {
     statusId: number;
     status: Status;
 
+    feedback: string = "";
+
     active: boolean;
 }

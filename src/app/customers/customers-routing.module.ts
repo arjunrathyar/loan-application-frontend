@@ -1,7 +1,7 @@
 import { NgModule } from '@angular/core';
 import { Routes, RouterModule } from '@angular/router';
 import { CustomerAddComponent } from "./customer-add/customer-add.component";
-import { CustomerEditComponent } from "./customer-edit-admin/customer-edit.component";
+import { CustomerEditComponent } from "./customer-edit/customer-edit.component";
 import { CustomerListComponent } from "./customer-list/customer-list.component";
 import { CustomerListAdminComponent } from './customer-list-admin/customer-list-admin.component';
 import { CustomerListAdminLoApprovedComponent } from './customer-list-admin-lo-approved/customer-list-admin-lo-approved.component';

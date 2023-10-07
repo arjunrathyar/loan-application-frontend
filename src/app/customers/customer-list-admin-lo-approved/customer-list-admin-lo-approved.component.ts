@@ -20,7 +20,7 @@ export class CustomerListAdminLoApprovedComponent implements OnInit {
   //life cycle hook
   ngOnInit(): void {
     console.log("Hi I'm customerlist component")
-    this.customerService.getAllRequestedCustomersList();
+    this.customerService.getAllVisitedCustomersList();
   }
 
   updateCustomer(customer: Customer) {

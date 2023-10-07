@@ -85,6 +85,20 @@ export class CustomerService {
   }
 
 
+  getAllVisitedCustomersList(): void {
+    this.httpClient.get(environment.apiUrl + "/api/visitedcustomers")
+      .toPromise()
+      .then(response => {
+        console.log(response);
+        this.customers = response as Customer[];   //storing in array
+      },
+        error => {
+          console.log('Error');
+        }
+      );
+  }
+
+
 
   getAllLoans(): void {
     this.httpClient.get(environment.apiUrl + "/api/loans")
