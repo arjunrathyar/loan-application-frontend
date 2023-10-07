@@ -25,6 +25,7 @@ export class CustomerListAdminComponent implements OnInit {
 
   updateCustomer(customer: Customer) {
     console.log(customer);
+    //localstorage
     this.populateCustomerData(customer);                             
     this.router.navigate(['customers/editlo', customer.customerId]);
   }

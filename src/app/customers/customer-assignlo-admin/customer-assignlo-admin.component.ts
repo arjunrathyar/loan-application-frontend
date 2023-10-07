@@ -15,6 +15,7 @@ export class CustomerAssignloAdminComponent implements OnInit {
   ngOnInit(): void {
     this.customerService.getAllLoans();
     this.customerService.getAllStatuses();
+    this.customerService.getAllLoanOfficers();
   }
 
   editCustomer(form: NgForm){

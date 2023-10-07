@@ -5,6 +5,7 @@ import { environment } from 'src/environments/environment';
 import { Observable } from 'rxjs';
 import { Loan } from '../models/loan';
 import { Status } from '../models/status';
+import { LoanOfficer } from '../models/loan-officer';
 
 @Injectable({
   providedIn: 'root'
@@ -23,8 +24,13 @@ export class CustomerService {
 
   loans: Loan[];
 
+  //List of Statuses
+
   statuses: Status[];
 
+  //List of LoanOfficer
+
+  loanOfficers: LoanOfficer[]
 
   //dependency injection  -- constructor
   constructor(private httpClient: HttpClient) { }  //dependancy injection - constructor injection
@@ -100,6 +106,19 @@ export class CustomerService {
       .then(response => {
         console.log(response);
         this.statuses = response as Status[];   //storing in array
+      },
+        error => {
+          console.log('Error');
+        }
+      );
+  }
+
+  getAllLoanOfficers(): void {
+    this.httpClient.get(environment.apiUrl + "/api/loanofficers")
+      .toPromise()
+      .then(response => {
+        console.log(response);
+        this.loanOfficers = response as LoanOfficer[];   //storing in array
       },
         error => {
           console.log('Error');
