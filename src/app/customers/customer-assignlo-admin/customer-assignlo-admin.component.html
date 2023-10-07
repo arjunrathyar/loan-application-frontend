@@ -67,13 +67,15 @@
             </select>
         </div>
 
+        <!-- customer.loanOfficer.loanOfficerName -->
+
         <div class="form-group">
-            <label>Status</label>
-            <select name="statusId" id="statusId" #statusId="ngModel"
-                [(ngModel)]="customerService.formCustomerData.statusId" class="form-control" required>
-                <option value="0" selected disabled>===========SELECT Status===========</option>
-                <option *ngFor="let stat of customerService.statuses" value="{{stat.statusId}}">
-                    {{stat.statusName}}</option> 
+            <label>Loan Officer</label>
+            <select name="loanOfficerId" id="loanOfficerId" #loanOfficerId="ngModel"
+                [(ngModel)]="customerService.formCustomerData.loanOfficerId" class="form-control" required>
+                <option value="0" selected disabled>===========SELECT LOAN OFFICER===========</option>
+                <option *ngFor="let lo of customerService.loanOfficers" value="{{lo.loanOfficerId}}">
+                    {{lo.loanOfficerName}}</option> 
             </select>
         </div>
 

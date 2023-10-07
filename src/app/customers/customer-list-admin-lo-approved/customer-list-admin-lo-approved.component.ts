@@ -4,11 +4,11 @@ import { Customer } from 'src/app/shared/models/customer';
 import { CustomerService } from 'src/app/shared/services/customer.service';
 
 @Component({
-  selector: 'app-customer-list-admin',
-  templateUrl: './customer-list-admin.component.html',
-  styleUrls: ['./customer-list-admin.component.scss']
+  selector: 'app-customer-list-admin-lo-approved',
+  templateUrl: './customer-list-admin-lo-approved.component.html',
+  styleUrls: ['./customer-list-admin-lo-approved.component.scss']
 })
-export class CustomerListAdminComponent implements OnInit {
+export class CustomerListAdminLoApprovedComponent implements OnInit {
 
   //declare number
   searchTerm ='';
@@ -26,7 +26,7 @@ export class CustomerListAdminComponent implements OnInit {
   updateCustomer(customer: Customer) {
     console.log(customer);
     this.populateCustomerData(customer);                             
-    this.router.navigate(['customers/editlo', customer.customerId]);
+    this.router.navigate(['customers/edit', customer.customerId]);
   }
 
   //delete

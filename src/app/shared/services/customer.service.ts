@@ -4,6 +4,7 @@ import { HttpClient } from '@angular/common/http';
 import { environment } from 'src/environments/environment';
 import { Observable } from 'rxjs';
 import { Loan } from '../models/loan';
+import { Status } from '../models/status';
 
 @Injectable({
   providedIn: 'root'
@@ -22,7 +23,7 @@ export class CustomerService {
 
   loans: Loan[];
 
-
+  statuses: Status[];
 
 
   //dependency injection  -- constructor
@@ -85,6 +86,20 @@ export class CustomerService {
       .then(response => {
         console.log(response);
         this.loans = response as Loan[];   //storing in array
+      },
+        error => {
+          console.log('Error');
+        }
+      );
+  }
+
+
+  getAllStatuses(): void {
+    this.httpClient.get(environment.apiUrl + "/api/status")
+      .toPromise()
+      .then(response => {
+        console.log(response);
+        this.statuses = response as Status[];   //storing in array
       },
         error => {
           console.log('Error');

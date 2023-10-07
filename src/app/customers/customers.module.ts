@@ -11,10 +11,12 @@ import { Ng2SearchPipeModule } from 'ng2-search-filter';
 import {NgxPaginationModule} from 'ngx-pagination';
 import { CustomerListAdminComponent } from './customer-list-admin/customer-list-admin.component';
 import { CustomerListLoanofficerComponent } from './customer-list-loanofficer/customer-list-loanofficer.component';
+import { CustomerListAdminLoApprovedComponent } from './customer-list-admin-lo-approved/customer-list-admin-lo-approved.component';
+import { CustomerAssignloAdminComponent } from './customer-assignlo-admin/customer-assignlo-admin.component';
 
 
 @NgModule({
-  declarations: [CustomersComponent, CustomerAddComponent, CustomerEditComponent, CustomerListComponent, CustomerListAdminComponent, CustomerListLoanofficerComponent],
+  declarations: [CustomersComponent, CustomerAddComponent, CustomerEditComponent, CustomerListComponent, CustomerListAdminComponent, CustomerListLoanofficerComponent, CustomerListAdminLoApprovedComponent, CustomerAssignloAdminComponent],
   imports: [
     FormsModule,
     CommonModule,

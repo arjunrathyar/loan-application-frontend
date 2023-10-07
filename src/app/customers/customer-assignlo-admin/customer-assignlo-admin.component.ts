@@ -4,11 +4,11 @@ import { Router } from '@angular/router';
 import { CustomerService } from 'src/app/shared/services/customer.service';
 
 @Component({
-  selector: 'app-customer-edit',
-  templateUrl: './customer-edit.component.html',
-  styleUrls: ['./customer-edit.component.scss']
+  selector: 'app-customer-assignlo-admin',
+  templateUrl: './customer-assignlo-admin.component.html',
+  styleUrls: ['./customer-assignlo-admin.component.scss']
 })
-export class CustomerEditComponent implements OnInit {
+export class CustomerAssignloAdminComponent implements OnInit {
 
   constructor(public customerService: CustomerService,private router: Router) { }
 
